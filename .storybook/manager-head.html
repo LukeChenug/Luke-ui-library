@@ -1,0 +1,157 @@
+<style>
+  /* 覆盖 Storybook 的主题变量 */
+  :root {
+    --color-primary: transparent !important;
+    --color-secondary: transparent !important;
+    --color-tertiary: transparent !important;
+  }
+
+  /* 重置所有 Storybook 的默认样式 */
+  #storybook-explorer-tree [data-selected="true"],
+  #storybook-explorer-tree [data-selected="true"]:hover {
+    background: rgb(80, 80, 80) !important;
+    color: rgba(255, 255, 255, 0.5) !important;
+  }
+
+  #storybook-explorer-tree .sidebar-item {
+    color: rgba(255, 255, 255, 0.7) !important;
+    background: transparent !important;
+  }
+
+  #storybook-explorer-tree .sidebar-item:hover:not([data-selected="true"]) {
+    color: rgba(255, 255, 255, 0.2) !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+  }
+
+  /* 确保链接颜色不会被覆盖 */
+  #storybook-explorer-tree a,
+  #storybook-explorer-tree a:hover,
+  #storybook-explorer-tree [data-selected="true"] a,
+  #storybook-explorer-tree [data-selected="true"] a:hover {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+
+  /* 重置所有状态的默认样式 */
+  .sidebar-item.css-wsp2z,
+  .sidebar-item.css-wsp2z:hover,
+  .sidebar-item.css-wsp2z[data-selected="true"],
+  .sidebar-item.css-wsp2z[data-selected="true"]:hover {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  /* 普通状态 */
+  .sidebar-item.css-wsp2z {
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+
+  /* 选中状态 */
+  .sidebar-item.css-wsp2z[data-selected="true"] {
+    color: rgba(255, 255, 255, 0.5) !important;
+    background: rgb(80, 80, 80) !important;
+  }
+
+  /* 悬浮状态 */
+  .sidebar-item.css-wsp2z:hover:not([data-selected="true"]) {
+    color: rgba(255, 255, 255, 0.2) !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+  }
+
+  /* 移除任何可能的蓝色或其他主题色 */
+  .sidebar-item * {
+    color: inherit !important;
+    background: inherit !important;
+  }
+
+  /* 选中+焦点状态 */
+  .css-wsp2z[data-selected="true"].css-wsp2z[data-selected="true"]:hover,
+  .css-wsp2z[data-selected="true"].css-wsp2z[data-selected="true"]:focus {
+    --tree-node-background-hover: #ffffff1f !important;
+    background: rgb(80, 80, 80) !important;
+  }
+
+  /* 图标颜色 */
+  .css-wsp2z svg * {
+    fill: currentColor !important;
+    stroke: currentColor !important;
+  }
+
+  /* 背景色 */
+  #storybook-explorer-tree {
+    background: #1D2021 !important;
+  }
+
+  /* 普通状态 - 白色文字 */
+  #storybook-explorer-tree .sidebar-item,
+  #storybook-explorer-tree .sidebar-item a,
+  #storybook-explorer-tree .sidebar-item button {
+    color: #FFFFFF !important;
+  }
+
+  /* 选中状态 - 黄色 */
+  #storybook-explorer-tree [data-selected="true"],
+  #storybook-explorer-tree [data-selected="true"] a,
+  #storybook-explorer-tree [data-selected="true"] button {
+    color: #F7FF98 !important;
+    background: rgba(247, 255, 152, 0.1) !important;
+  }
+
+  /* Hover状态 - 仅应用于文字部分 */
+  #storybook-explorer-tree .sidebar-item:hover:not([data-selected="true"]) a span,
+  #storybook-explorer-tree .sidebar-item:hover:not([data-selected="true"]) button span {
+    background: rgba(255, 255, 255, 0.2) !important;
+    color: #FFFFFF !important;
+  }
+
+  /* 移除所有图标的hover效果 */
+  #storybook-explorer-tree svg,
+  #storybook-explorer-tree button[data-action="collapse-root"] svg,
+  #storybook-explorer-tree button[data-action="expand-root"] svg,
+  #storybook-explorer-tree .sidebar-item:hover svg,
+  #storybook-explorer-tree button:hover svg {
+    background: transparent !important;
+    opacity: 1 !important;
+  }
+
+  /* 移除箭头按钮的hover效果 */
+  #storybook-explorer-tree button[data-action="collapse-root"]:hover,
+  #storybook-explorer-tree button[data-action="expand-root"]:hover {
+    background: transparent !important;
+  }
+
+  /* 图标基础样式 */
+  #storybook-explorer-tree .sidebar-item svg {
+    color: inherit !important;
+    background: transparent !important;
+  }
+
+  /* 选中状态的图标 */
+  #storybook-explorer-tree [data-selected="true"] svg {
+    color: #F7FF98 !important;
+  }
+
+  /* Logo 样式 */
+  .sidebar-header {
+    display: flex !important;
+    align-items: center !important;
+    padding: 15px !important;
+    background: #1D2021 !important;
+  }
+
+  .sidebar-header::before {
+    content: '' !important;
+    display: inline-block !important;
+    /* 改回 1.5 倍大小 (32px * 1.5 = 48px) */
+    width: 48px !important;
+    height: 48px !important;
+    margin-right: 5px !important;  /* 稍微增加了边距 */
+    background-image: url('/logo.svg') !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+  }
+</style> 
